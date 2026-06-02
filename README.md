@@ -1,7 +1,7 @@
 -----
 🚀 StreamHub – Provider Link Directory
 ------
-A modern GitHub Pages-based dashboard that lists external streaming, TV shows, movies, and embed providers in a fast, searchable, and responsive table.
+A modern GitHub Pages-based dashboard that lists external streaming, embed providers in a fast, searchable, and responsive table.
 
 This project is actively maintained and will be updated over time as new API and embed providers are discovered and added.
 
@@ -11,7 +11,7 @@ This project is actively maintained and will be updated over time as new API and
 
 StreamHub is a clean link directory dashboard UI built for GitHub Pages.
 
-It provides a fast way to browse and access external streaming, movie, TV show, and embed providers through a structured table interface with a modern app-like experience.
+It provides a fast way to browse and access external streaming, embed providers through a structured table interface with a modern app-like experience.
 
 Users can:
 
@@ -37,7 +37,7 @@ Fast, direct, and minimal interaction required.
 
 🧩 Purpose
 
-StreamHub is a fast navigation hub for external streaming, movie, TV show, and embed API providers only.
+StreamHub is a fast navigation hub for external streaming, embed API providers only.
 
 It is designed for quick access, not content hosting.
 
@@ -53,7 +53,7 @@ New providers will be added whenever they are discovered, tested, or verified to
 -----------
 📌 Summary
 
-StreamHub combines a modern dashboard-style interface with a fast searchable provider directory, allowing users to quickly access external streaming, movie, TV show, and embed sources.
+StreamHub combines a modern dashboard-style interface with a fast searchable provider directory, allowing users to quickly access external streaming, embed sources.
 
 ---------
-StreamHub – A clean, modern GitHub Pages provider directory dashboard that grows over time.
+StreamHub – A clean, modern GitHub Pages provider directory,
