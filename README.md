@@ -21,7 +21,6 @@ Users can:
 * Filter and navigate large datasets easily
 * Click links to open external providers in one tab
 
-No backend, no login, no downloads.
 
 ------------
 🚀 How Users Use It
