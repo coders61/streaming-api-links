@@ -1,0 +1,213 @@
+:root{
+    --bg:#0b0f14;
+    --card:#141b24;
+    --border:#243041;
+    --text:#eaf2fb;
+    --muted:#8ea2b5;
+    --accent:#ff7a45;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    font-family:Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* background glow */
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(255,122,69,.10), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(255,122,69,.05), transparent 45%);
+    z-index:-1;
+}
+
+/* HEADER CLEAN */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
+    background:rgba(11,15,20,.75);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:14px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+/* GitHub button */
+.github-link{
+    padding:10px 14px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    background:linear-gradient(135deg,#24292e,#1b1f23);
+    color:#fff;
+    border:1px solid var(--border);
+    transition:.2s;
+}
+
+.github-link:hover{
+    transform:translateY(-1px);
+    border-color:var(--accent);
+}
+
+/* MAIN */
+main{
+    max-width:1200px;
+    margin:auto;
+    padding:110px 18px 40px;
+}
+
+/* HERO */
+.hero{
+    display:grid;
+    grid-template-columns:1.4fr .6fr;
+    gap:35px;
+    padding:30px 0;
+}
+
+.hero h1{
+    font-size:2.7rem;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:var(--muted);
+    line-height:1.6;
+    margin-bottom:18px;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.stat{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:14px;
+}
+
+.stat h3{
+    font-size:1.3rem;
+}
+
+/* PREVIEW */
+.preview{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:14px;
+}
+
+.preview-item{
+    display:flex;
+    justify-content:space-between;
+    padding:10px;
+    background:rgba(255,255,255,.03);
+    border-radius:10px;
+    margin-top:8px;
+}
+
+/* TABLE */
+.section-title{
+    margin:40px 0 15px;
+    font-size:1.4rem;
+}
+
+.table-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:12px;
+}
+
+/* DATATABLE */
+table.dataTable{
+    width:100% !important;
+}
+
+table.dataTable thead th{
+    background:#1a2432 !important;
+    color:#fff !important;
+    padding:14px !important;
+}
+
+table.dataTable tbody td{
+    padding:14px !important;
+    color:var(--muted);
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+table.dataTable tbody tr:hover td{
+    background:rgba(255,255,255,.03);
+}
+
+/* LINK BUTTON */
+.visit-link{
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:10px;
+    background:rgba(255,122,69,.15);
+    color:var(--accent);
+    text-decoration:none;
+    font-size:.8rem;
+    font-weight:600;
+}
+
+.visit-link:hover{
+    background:rgba(255,122,69,.3);
+}
+
+/* BADGES */
+.badge{
+    padding:5px 10px;
+    border-radius:999px;
+    font-size:.75rem;
+}
+
+.active{background:rgba(46,204,113,.15);color:#2ecc71}
+.testing{background:rgba(241,196,15,.15);color:#f1c40f}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:45px 0;
+    color:var(--muted);
+    margin-top:60px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+.hero{
+    grid-template-columns:1fr;
+}
+
+.stats{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:2rem;
+}

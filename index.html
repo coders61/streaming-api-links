@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StreamHub Providers - Movie, TV & Embed API Directory</title>
+
+<!-- SEO META -->
+<meta name="description" content="StreamHub Providers is a directory of movie embed APIs, TV show APIs, streaming providers, and video hosting services.">
+<meta name="keywords" content="movie api, tv show api, embed providers, streaming api, video hosting, cinema embed, player api">
+
+<meta name="robots" content="index, follow">
+
+<!-- EXTERNAL CSS (GitHub READY) -->
+<link rel="stylesheet" href="styles.css">
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+
+</head>
+
+<body>
+
+<header>
+<div class="header-inner">
+
+<div class="logo">StreamHub</div>
+
+<a class="github-link" href="https://github.com/" target="_blank">
+GitHub
+</a>
+
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+
+<div>
+
+<h1>Movie & TV Embed Providers Directory</h1>
+
+<p>
+Discover API providers for movies, TV shows, streaming embeds, hosting platforms, and video playback services.
+</p>
+
+<div class="stats">
+<div class="stat"><h3 id="total">0</h3><p>Total Providers</p></div>
+<div class="stat"><h3 id="active">0</h3><p>Active APIs</p></div>
+<div class="stat"><h3 id="testing">0</h3><p>Testing</p></div>
+</div>
+
+</div>
+
+<div class="preview">
+<h3>Live Preview</h3>
+<div id="preview"></div>
+</div>
+
+</section>
+
+<h2 class="section-title">Movie / TV / Embed Providers</h2>
+
+<div class="table-card">
+
+<table id="tbl" class="display">
+<thead>
+<tr>
+<th>Provider</th>
+<th>Type</th>
+<th>Status</th>
+<th>Link</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>EmbedMaster</td>
+<td>Movie Embed API</td>
+<td><span class="badge active">Active</span></td>
+<td><a class="visit-link" href="https://embedmaster.example" target="_blank">Visit</a></td>
+</tr>
+
+<tr>
+<td>VidFast</td>
+<td>TV Show API</td>
+<td><span class="badge active">Active</span></td>
+<td><a class="visit-link" href="https://vidfast.example" target="_blank">Visit</a></td>
+</tr>
+
+<tr>
+<td>PlayerCloud</td>
+<td>Video Hosting API</td>
+<td><span class="badge testing">Testing</span></td>
+<td><a class="visit-link" href="https://playercloud.example" target="_blank">Visit</a></td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 StreamHub — Movie & TV Provider Directory
+</footer>
+
+<script>
+$(function(){
+
+const table = $('#tbl').DataTable({
+    pageLength:5,
+    responsive:true
+});
+
+function update(){
+
+let rows = table.rows({search:'applied'}).data();
+
+let total = rows.length;
+let active = 0;
+let testing = 0;
+
+$('#preview').html('');
+
+rows.each(function(row,i){
+
+let status = $(row[2]).text().trim();
+let name = row[0];
+
+if(status==="Active") active++;
+if(status==="Testing") testing++;
+
+if(i<3){
+$('#preview').append(`
+<div class="preview-item">
+<span>${name}</span>
+<span>${status}</span>
+</div>`);
+}
+
+});
+
+$('#total').text(total);
+$('#active').text(active);
+$('#testing').text(testing);
+}
+
+update();
+table.on('draw', update);
+
+});
+</script>
+
+</body>
+</html>
