@@ -53,7 +53,6 @@ Discover API providers for movies, TV shows, streaming embeds, hosting platforms
 <div class="stats">
 <div class="stat"><h3 id="total">0</h3><p>Total Providers</p></div>
 <div class="stat"><h3 id="active">0</h3><p>Active APIs</p></div>
-<div class="stat"><h3 id="testing">0</h3><p>Testing</p></div>
 </div>
 
 </div>
@@ -120,7 +119,6 @@ let rows = table.rows({search:'applied'}).data();
 
 let total = rows.length;
 let active = 0;
-let testing = 0;
 
 $('#preview').html('');
 
@@ -130,7 +128,6 @@ let status = $(row[2]).text().trim();
 let name = row[0];
 
 if(status==="Active") active++;
-if(status==="Testing") testing++;
 
 if(i<3){
 $('#preview').append(`
@@ -144,7 +141,6 @@ $('#preview').append(`
 
 $('#total').text(total);
 $('#active').text(active);
-$('#testing').text(testing);
 }
 
 update();
